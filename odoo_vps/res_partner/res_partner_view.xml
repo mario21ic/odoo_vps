@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Form -->
+        <record model="ir.ui.view" id="view_partner_form_pdg">
+            <field name="name">res.partner.form.pdg</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']" position="before">
+                    <page string="Contrato">
+                        <field name="pdg_contract">
+                            <group>
+                                <group>
+                                    <!--
+                                    <field name="order_id" invisible="1" />
+                                    -->
+                                    <field name="partner_id" invisible="1" />
+                                    <field name="name" />
+                                    <field name="date_start" />
+                                    <field name="date_end" />
+                                </group>
+
+                                <group>
+                                    <field name="vps_online" />
+                                    <field name="vps_server" />
+                                    <field name="vps_access" />
+
+                                    <field name="cms_name" />
+                                    <field name="cms_access" />
+                                    <field name="cms_version" />
+                                </group>
+                            </group>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Tree -->
+        <record model="ir.ui.view" id="view_partner_tree_pdg">
+            <field name="name">res.partner.tree.pdg</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="pdg_contract" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
