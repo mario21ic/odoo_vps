@@ -1,7 +1,7 @@
 web:
   image: odoo:8
   volumes:
-   - ./pdgvps:/mnt/extra-addons/pdgvps
+   - ./odoo_vps:/mnt/extra-addons/odoo_vps
   links:
   - db
   ports:
